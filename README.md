@@ -85,7 +85,7 @@ setCookie('user', userDetail, {
 ```
 <h2><code>getCookie(key)</code></h2>
 
-Получение значения cookie по указанному ключу <code>key</code>. If the function finds a cookie with the specified key, the function will return a value, otherwise false.
+Getting the cookie value for the specified <code>key</code>. If the function finds a cookie with the specified key, the function will return a value, otherwise false.
 <h3>Example</h3>
 
 ```javascript
