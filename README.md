@@ -94,23 +94,6 @@ getCookie('name'); // Alex
 getCookie('someCookie'); // false
 ```
 
-In addition, the key parameter can be an array. In this case, you will get an object with keys are cookie-keys. 
-If it was not possible to get one of the keys, then when the function returns, the key property will be null. If the function did not find any key passed to the array, then the function will return false.
-
-<h3>Example</h3>
-
-```javascript
-// In cookie storage "name=Alex; age=20"
-getCookie(['name', 'age', 'surname']);
-/*
-{
-  name: 'Alex',
-  age: '20',
-  surname: null
-}
-*/ 
-```
-
 <h2><code>removeCookie(key, [options])</code></h2>
 
 Removes the cookie for the given key. If there is access and the cookie was successfully deleted, the function will return true, otherwise false. Also, there are cases when, to delete a cookie, you need to specify additional defining cookie parameters that were specified when the cookie was created or defined in the cookie parameters (see developer console), in which case the <code>options</code> conditional parameter is used to explicitly indicate the cookie.
