@@ -1,17 +1,27 @@
 export function parseOptions(options) {
-  const regexp = /[A-Z]/g;
+  if (Object.keys(options).length === 0) return '';
 
-  if (options && !!Object.keys(options).length) {
-    return Object.entries(options).map(([key, value]) => {
-      if (regexp.test(key)) {
-        key = key.replace(regexp, (match) => {
-          return '-' + match[0].toLowerCase() + match.slice(1, match.length);
-        })
+  return Object.entries(options).map(
+    ([key, value]) => {
+      const firstLetter = key[0].toUpperCase();
+      const spreadLetter = key
+        .slice(1, key.length)
+        .replace(/[A-Z]/, (match) => '-' + match);
+      const formattedKey = firstLetter + spreadLetter;
+
+      switch (typeof value) {
+        case 'boolean':
+          return value
+            ? formattedKey
+            : '';
+        default:
+          return `${formattedKey}=${JSON.stringify(value)}`;
       }
-
-      return `${key}=${value}`;
-    }).join('; ');
-  }
-
-  return '';
+    }
+  ).join(';');
 }
+
+export function isExistKey(key) {
+  return typeof key === 'string' && key.trim().length !== 0;
+}
+
