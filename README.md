@@ -2,7 +2,23 @@
 js-cookie is a helper package for interacting with cookies stored in the browser, written entirely in native JavaScript methods.
 <h2>How work with it</h2>
 At the moment, the package defines several methods for working with cookies: Set, Get, Remove.
-<h2><code>setCookie(key, value, [options])</code></h2>
+<h2>Install & Usage</h2>
+To install package:
+
+```javascript
+
+npm i --save-dev @eneropl/js-cookies
+
+```
+To use package:
+
+```javascript
+
+import cookies from '@eneropl/js-cookies'
+
+```
+
+<h2><code>cookies.set(key, value, [options])</code></h2>
 If you do not specify the required parameters of the method or the parameters will be invalid, then the setting of the cookie will be rejected, and the function will return false, otherwise, if the cookie is created successfully, the function will return true. When writing a cookie, if a cookie with the corresponding key already exists, the method will update the key value. Ultimately, the cookie will update its value without creating a duplicate.
 <br><br>
 <table>
@@ -83,7 +99,7 @@ setCookie('user', userDetail, {
   path: '/;
 }); // true
 ```
-<h2><code>getCookie(key)</code></h2>
+<h2><code>cookies.get(key)</code></h2>
 
 Getting the cookie value for the specified <code>key</code>. If the function finds a cookie with the specified key, the function will return a value, otherwise false.
 <h3>Example</h3>
@@ -94,7 +110,7 @@ getCookie('name'); // Alex
 getCookie('someCookie'); // false
 ```
 
-<h2><code>removeCookie(key, [options])</code></h2>
+<h2><code>cookies.delete(key, [options])</code></h2>
 
 Removes the cookie for the given key. If there is access and the cookie was successfully deleted, the function will return true, otherwise false. Also, there are cases when, to delete a cookie, you need to specify additional defining cookie parameters that were specified when the cookie was created or defined in the cookie parameters (see developer console), in which case the <code>options</code> conditional parameter is used to explicitly indicate the cookie.
 <h3>Example</h3>
