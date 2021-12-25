@@ -1,2 +1,2 @@
-import { setCookie, getCookie, deleteCookie } from "./src/index.js";
-export { setCookie, getCookie, deleteCookie };
+import cookies from "./src/index.js";
+export default cookies;
