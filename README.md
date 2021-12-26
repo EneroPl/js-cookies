@@ -54,7 +54,7 @@ If you do not specify the required parameters of the method or the parameters wi
 </table>
 <br>
 <table>
-  <caption>The options object takes parameters that are used to define the cookie properties according to the specification</caption>
+  <caption>The options object takes parameters that are used to define the cookie properties according to the specification. Below is only a small part of the options that can be passed along with the value.</caption>
   <thead>
     <tr>
       <th>Key</th>
