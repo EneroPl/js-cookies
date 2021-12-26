@@ -93,7 +93,7 @@ const userDeail = {
   age: 20
 };
 
-setCookie('user', userDetail, {
+cookies.set('user', userDetail, {
   // This cookie will be stored for 1 hour
   maxAge: 3600,
   path: '/;
@@ -106,8 +106,8 @@ Getting the cookie value for the specified <code>key</code>. If the function fin
 
 ```javascript
 // In cookie storage "name=Alex;"
-getCookie('name'); // Alex
-getCookie('someCookie'); // false
+cookies.get('name'); // Alex
+cookies.get('someCookie'); // false
 ```
 
 <h2><code>cookies.delete(key, [options])</code></h2>
@@ -117,6 +117,6 @@ Removes the cookie for the given key. If there is access and the cookie was succ
 
 ```javascript
 // In cookie storage "name=Alex; age=20", when age from different domain or httpOnly.
-removeCookie('name') // true. Cookie deleted successfully.
-removeCookie('age') // false. Available cookie with "age" doesn't exist to delete.
+cookies.delete('name') // true. Cookie deleted successfully.
+cookies.delete('age') // false. Available cookie with "age" doesn't exist to delete.
 ```
